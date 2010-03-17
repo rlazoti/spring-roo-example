@@ -1,0 +1,48 @@
+<div xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:spring="http://www.springframework.org/tags" id="menu" version="2.0">
+	<jsp:output omit-xml-declaration="yes"/>
+	<ul id="roo_menu">
+			
+	<li id="web_mvc_jsp_post_category">
+            <h2>
+                <spring:message code="menu.category.web_mvc_jsp_post_category.label"/>
+            </h2>
+            <ul>
+                <li id="web_mvc_jsp_create_post_menu_item">
+                    <spring:url value="/post/form" var="web_mvc_jsp_create_post_menu_item_url"/>
+                    <a href="${web_mvc_jsp_create_post_menu_item_url}">
+                        <spring:message code="label.post" var="label_post"/>
+                        <spring:message arguments="${label_post}" code="global.menu.new"/>
+                    </a>
+                </li>
+            <li id="web_mvc_jsp_list_post_menu_item">
+                    <spring:url value="/post?page=${empty param.page ? 1 : param.page}&amp;amp;size=${empty param.size ? 10 : param.size}" var="web_mvc_jsp_list_post_menu_item_url"/>
+                    <a href="${web_mvc_jsp_list_post_menu_item_url}">
+                        <spring:message code="label.posts" var="label_posts"/>
+                        <spring:message arguments="${label_posts}" code="global.menu.list"/>
+                    </a>
+                </li>
+            </ul>
+        </li>
+    <li id="web_mvc_jsp_author_category">
+            <h2>
+                <spring:message code="menu.category.web_mvc_jsp_author_category.label"/>
+            </h2>
+            <ul>
+                <li id="web_mvc_jsp_create_author_menu_item">
+                    <spring:url value="/author/form" var="web_mvc_jsp_create_author_menu_item_url"/>
+                    <a href="${web_mvc_jsp_create_author_menu_item_url}">
+                        <spring:message code="label.author" var="label_author"/>
+                        <spring:message arguments="${label_author}" code="global.menu.new"/>
+                    </a>
+                </li>
+            <li id="web_mvc_jsp_list_author_menu_item">
+                    <spring:url value="/author?page=${empty param.page ? 1 : param.page}&amp;amp;size=${empty param.size ? 10 : param.size}" var="web_mvc_jsp_list_author_menu_item_url"/>
+                    <a href="${web_mvc_jsp_list_author_menu_item_url}">
+                        <spring:message code="label.authors" var="label_authors"/>
+                        <spring:message arguments="${label_authors}" code="global.menu.list"/>
+                    </a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>

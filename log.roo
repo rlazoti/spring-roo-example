@@ -1,0 +1,24 @@
+// Spring Roo 1.0.1.RELEASE [rev 601] log opened at 2010-03-17 15:15:30
+project --projectName JavaMagazineBlog --topLevelPackage br.com.javamagazine
+persistence setup --database MYSQL --provider HIBERNATE 
+database properties list
+database properties set --key database.url --value jdbc:mysql://localhost:3306/javamagazine
+database properties set --key database.username --value root
+database properties list
+entity --class ~.domain.Author --testAutomatically 
+field string --fieldName name --notNull --sizeMin 3 --sizeMax 150
+field string --fieldName email --sizeMin 10
+entity --class ~.domain.Post --testAutomatically 
+field string --fieldName title --sizeMin 10 --sizeMax 100
+field string --fieldName body --sizeMax 10000
+field reference --fieldName author --type ~.domain.Author --notNull
+field date --fieldName published_at --type java.util.Date
+perform tests
+backup
+controller all --package ~.web
+perform eclipse
+exit
+// Spring Roo 1.0.1.RELEASE [rev 601] log closed at 2010-03-17 15:16:03
+// Spring Roo 1.0.1.RELEASE [rev 601] log opened at 2010-03-17 15:16:03
+// script --file JavaMagazineBlog.roo
+// Spring Roo 1.0.1.RELEASE [rev 601] log closed at 2010-03-17 15:16:03

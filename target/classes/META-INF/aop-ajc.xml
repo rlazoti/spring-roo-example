@@ -1,0 +1,15 @@
+<aspectj>
+<aspects>
+<aspect name="br.com.javamagazine.domain.Author_Roo_ToString"/>
+<aspect name="br.com.javamagazine.domain.Author_Roo_Entity"/>
+<aspect name="br.com.javamagazine.web.PostController_Roo_Controller"/>
+<aspect name="br.com.javamagazine.domain.Post_Roo_Configurable"/>
+<aspect name="br.com.javamagazine.domain.Post_Roo_ToString"/>
+<aspect name="br.com.javamagazine.domain.Post_Roo_JavaBean"/>
+<aspect name="br.com.javamagazine.domain.Author_Roo_JavaBean"/>
+<aspect name="br.com.javamagazine.domain.Author_Roo_Configurable"/>
+<aspect name="br.com.javamagazine.domain.Post_Roo_Entity"/>
+<aspect name="br.com.javamagazine.web.AuthorController_Roo_Controller"/>
+</aspects>
+</aspectj>
+

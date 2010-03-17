@@ -1,0 +1,13 @@
+<aspectj>
+<aspects>
+<aspect name="br.com.javamagazine.domain.PostDataOnDemand_Roo_DataOnDemand"/>
+<aspect name="br.com.javamagazine.domain.AuthorDataOnDemand_Roo_Configurable"/>
+<aspect name="br.com.javamagazine.domain.PostIntegrationTest_Roo_IntegrationTest"/>
+<aspect name="br.com.javamagazine.domain.PostIntegrationTest_Roo_Configurable"/>
+<aspect name="br.com.javamagazine.domain.AuthorIntegrationTest_Roo_Configurable"/>
+<aspect name="br.com.javamagazine.domain.AuthorDataOnDemand_Roo_DataOnDemand"/>
+<aspect name="br.com.javamagazine.domain.AuthorIntegrationTest_Roo_IntegrationTest"/>
+<aspect name="br.com.javamagazine.domain.PostDataOnDemand_Roo_Configurable"/>
+</aspects>
+</aspectj>
+

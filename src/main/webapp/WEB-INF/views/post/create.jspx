@@ -1,0 +1,56 @@
+<div xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:form="http://www.springframework.org/tags/form" xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:spring="http://www.springframework.org/tags" version="2.0">
+    <jsp:output omit-xml-declaration="yes"/>
+    <script type="text/javascript">dojo.require('dijit.TitlePane');dojo.require('dijit.form.SimpleTextarea');dojo.require('dijit.form.FilteringSelect');dojo.require('dijit.form.DateTextBox');</script>
+    <div id="_title_div">
+        <spring:message code="label.post" var="entity_label"/>
+        <spring:message arguments="${entity_label}" code="entity.create" var="title_msg"/>
+        <script type="text/javascript">Spring.addDecoration(new Spring.ElementDecoration({elementId : '_title_div', widgetType : 'dijit.TitlePane', widgetAttrs : {title: '${title_msg}'}})); </script>
+        <spring:url value="/post" var="form_url"/>
+        <form:form action="${form_url}" method="POST" modelAttribute="post">
+            <form:errors cssClass="errors" delimiter="&lt;p/&gt;"/>
+            <div id="roo_post_title">
+                <label for="_title_id">Title:</label>
+                <form:textarea cssStyle="width:250px" id="_title_id" path="title"/>
+                <script type="text/javascript">Spring.addDecoration(new Spring.ElementDecoration({elementId : '_title_id', widgetType: 'dijit.form.SimpleTextarea', widgetAttrs: {}})); </script>
+                <br/>
+                <form:errors cssClass="errors" id="_title_error_id" path="title"/>
+            </div>
+            <br/>
+            <div id="roo_post_body">
+                <label for="_body_id">Body:</label>
+                <form:textarea cssStyle="width:250px" id="_body_id" path="body"/>
+                <script type="text/javascript">Spring.addDecoration(new Spring.ElementDecoration({elementId : '_body_id', widgetType: 'dijit.form.SimpleTextarea', widgetAttrs: {}})); </script>
+                <br/>
+                <form:errors cssClass="errors" id="_body_error_id" path="body"/>
+            </div>
+            <br/>
+            <div id="roo_post_author">
+                <c:if test="${not empty authors}">
+                    <label for="_author_id">Author:</label>
+                    <form:select cssStyle="width:250px" id="_author_id" path="author">
+                        <form:options itemValue="id" items="${authors}"/>
+                    </form:select>
+                    <script type="text/javascript">Spring.addDecoration(new Spring.ElementDecoration({elementId : '_author_id', widgetType: 'dijit.form.FilteringSelect', widgetAttrs : {hasDownArrow : true}})); </script>
+                </c:if>
+            </div>
+            <br/>
+            <div id="roo_post_published_at">
+                <label for="_published_at_id">Published_at:</label>
+                <form:input cssStyle="width:250px" id="_published_at_id" maxlength="30" path="published_at" size="0"/>
+                <br/>
+                <form:errors cssClass="errors" id="_published_at_error_id" path="published_at"/>
+                <spring:message arguments="Published_at" code="field.invalid" var="field_invalid"/>
+                <spring:message code="field.required" var="field_required"/>
+                <spring:message argumentSeparator="," arguments="Published_at," code="field.simple.validation" var="field_validation"/>
+                <script type="text/javascript">Spring.addDecoration(new Spring.ElementDecoration({elementId : '_published_at_id', widgetType : 'dijit.form.ValidationTextBox', widgetAttrs : {promptMessage: '${field_validation}', invalidMessage: '${field_invalid}', required : false}})); </script>
+                <script type="text/javascript">Spring.addDecoration(new Spring.ElementDecoration({elementId : '_published_at_id', widgetType : 'dijit.form.DateTextBox', widgetAttrs : {promptMessage: '${field_validation}', constraints: {datePattern : '${post_published_at_date_format}', required : false}, datePattern : '${post_published_at_date_format}'}})); </script>
+            </div>
+            <br/>
+            <div class="submit" id="roo_post_submit">
+                <spring:message code="button.save" var="save_button"/>
+                <script type="text/javascript">Spring.addDecoration(new Spring.ValidateAllDecoration({elementId:'proceed', event:'onclick'}));</script>
+                <input id="proceed" type="submit" value="${save_button}"/>
+            </div>
+        </form:form>
+    </div>
+</div>
